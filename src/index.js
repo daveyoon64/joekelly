@@ -53,6 +53,7 @@ function App() {
       <Clock />
       <Clock />
       <Clock />
+      <Toggle />
     </div>
   );
 }
@@ -110,6 +111,30 @@ class Clock extends React.Component {
 //   );
 // }
 // setInterval(tick, 1000);
+
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggle: true};
+
+    // this bind is necessary to 'this' work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
 
 ReactDOM.render(
   <App />,
