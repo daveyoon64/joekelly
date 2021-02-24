@@ -4,33 +4,34 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Calculator from './temperature';
 
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName; 
-}
+// 
+// function formatName(user) {
+//   return user.firstName + ' ' + user.lastName; 
+// }
 
-function getGreeting(user) {
-  if (user) {
-    return <h1>Hello, {formatName(user)}!</h1>
-  }
-  return <h1>Hello, Stranger!</h1>
-}
+// function getGreeting(user) {
+//   if (user) {
+//     return <h1>Hello, {formatName(user)}!</h1>
+//   }
+//   return <h1>Hello, Stranger!</h1>
+// }
 
-const user = {
-  firstName: 'Bill',
-  lastName: 'The Shill',
-  avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Future_USS_Zumwalt%27s_first_underway_at_sea.jpg/2560px-Future_USS_Zumwalt%27s_first_underway_at_sea.jpg'
-};
+// Example elements
+// const user = {
+//   firstName: 'Bill',
+//   lastName: 'The Shill',
+//   avatarUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Future_USS_Zumwalt%27s_first_underway_at_sea.jpg/2560px-Future_USS_Zumwalt%27s_first_underway_at_sea.jpg'
+// };
 
-const element = (
-  <div>
-    <img src={user.avatarUrl} width="800" height="600"></img>
-    <img src="logo512.png" width="128" height="128"></img>
-    <h1>
-      Hello, {formatName(user)}!
-  </h1>
-  </div>
-  
-);
+// const element = (
+//   <div>
+//     <img src={user.avatarUrl} width="800" height="600"></img>
+//     <img src="logo512.png" width="128" height="128"></img>
+//     <h1>
+//       Hello, {formatName(user)}!
+//   </h1>
+//   </div>
+// );
 
 // one way of declaring a component
 function Welcome(props) {
@@ -161,7 +162,9 @@ const numbers = [1, 2, 3, 4, 5];
 function CarList(props) {
   const cars = props.cars;
   const listCars = cars.map((car) =>
-    <li>{car}</li>
+    <li key={car.toString()}>
+      {car}
+    </li>
   )
   return (
     <ul>{listCars}</ul>
