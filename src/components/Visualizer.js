@@ -25,8 +25,6 @@ const Visualizer = () => {
     }
   }, [grid, getInitialGrid, isNew]);
 
-  
-
   const createNode = (col, row) => {
     return {
       col,

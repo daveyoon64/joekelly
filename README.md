@@ -1,6 +1,6 @@
-# joekelly: A JavaScript Maze Visualizer 
+# joekelly: Pathfinding Algorithm Visualizer 
 ## Description
-- This project will visualize several popular binary tree algorithms that can be used to generate and solve random mazes.
+- This project will visualize several popular pathfinding algorithms.
 
 ## How to run
 1. Run ```npm start``` in the joekelly directory
